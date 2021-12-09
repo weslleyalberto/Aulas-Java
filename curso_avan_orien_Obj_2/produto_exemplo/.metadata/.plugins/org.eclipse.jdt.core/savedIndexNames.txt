@@ -1,0 +1,1 @@
+INDEX VERSION 1.131+C:\Users\wesll\eclipse-workspace\curso_java2\curso_avan_orien_Obj_2\produto_exemplo\.metadata\.plugins\org.eclipse.jdt.core
