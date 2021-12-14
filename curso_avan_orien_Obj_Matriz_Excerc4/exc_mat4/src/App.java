@@ -2,34 +2,39 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Digite a quantidade de matriz: ");
+       Scanner scanner = new Scanner(System.in);
+        System.out.print("Digite a capacidade da matriz: ");
         int n = scanner.nextInt();
         int[][] mat = new int[n][n];
 
-        for(int i =0; i < n; i++){
-            for(int j =0; j < n; j++){
-                System.out.print("Digite um número: ");
-                int v = scanner.nextInt();
-                mat[i][j] = v;
+        for(int i =0; i< n; i++){
+            for(int c =0; c <n;c++){
+                System.out.print("Digite um número inteiro para matriz: ");             
+                mat[i][c] = scanner.nextInt();
             }
         }
-        int numerosNagatuivos =0;
+        //Diagonal
+        System.out.println();
+        System.out.println("Diagonal: ");
+        for(int i =0 ; i < mat.length; i++){
+            System.out.print(mat[i][i] + " ");
+        }
+        // Números negativos
+
+        System.out.println();
+        System.out.println("Números negativos");
+
+        int quantidadeNegativos =0;
         for(int i =0; i < n; i++){
-            for(int j =0;j<n;j++){
-                if(mat[i][j] < 0){
-                   
-                    numerosNagatuivos++;
+            for(int k =0; k < n; k++){
+                if(mat[i][k] < 0){
+                    quantidadeNegativos++;
                 }
             }
         }
+        System.out.print(quantidadeNegativos);
 
-        System.out.print("Números negativos: ->" + numerosNagatuivos);
 
-        System.out.println();
-        for(int i =0; i <mat.length; i++){
-            System.out.print(mat[i][i] + " ");
-        }
-        scanner.close();
+       scanner.close();
     }
 }
