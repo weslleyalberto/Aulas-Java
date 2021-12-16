@@ -28,6 +28,21 @@ public class App {
             acc5.atualizacaoSaldo();
             System.out.println("Atualizado! ");
         }
+        //Sobreposição
+        System.out.println("*********************");
+        Conta acc1 = new Conta(1500,"Alex", 1000.0);
+        acc1.saque(200.0);
+        System.out.println(String.format("%.2f", acc1.getSaldo()));
+        System.out.println("---------------------------------");
+        Conta acc2 = new ContaPoupanca(1002,"marina",1000.0, 0.01);
+        acc2.saque(200.0);
+        System.out.println(acc2.getSaldo());
+
+        //Subreposição com Super()
+        Conta conta10 = new ContaEmpresa(1003,"Jonas",1000.0,500.0);
+        conta10.saque(200.0);
+        System.out.println(conta10.getSaldo());
+
 
     }
 }

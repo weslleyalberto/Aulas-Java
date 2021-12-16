@@ -30,7 +30,7 @@ public class Conta {
         this.numero = numero;
     }
     public void saque(double saque){
-        saldo-= saque;
+        saldo-= saque + 5.0;
     }
     public void deposito(double deposito){
         saldo+=deposito;
