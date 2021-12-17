@@ -11,6 +11,14 @@ public class App {
        Conta conta1 =  contaEmpresa;
        Conta conta2 = new ContaEmpresa(1003,"Bobo",0.0,200.0);
        Conta conta3 = new ContaPoupanca(1004,"Anna",0.0,0.01);
+        Conta x = new ContaEmpresa(3,"Alex",1000.0,0.1);
+        Conta y = new ContaPoupanca(4,"Bob",1000.0,0.05);
+        x.saque(50.0);
+        y.saque(50.0);
+        System.out.println("tttttttttttttttttttttttttttttttttttttttttttt");
+        System.out.println(x.getSaldo());
+        System.out.println(y.getSaldo());
+        System.out.println("vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv");
 
        //DOWNCASTING
 
