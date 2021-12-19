@@ -1,6 +1,6 @@
 package entities;
 
-public class ContaPoupanca extends Conta{
+public  class ContaPoupanca extends Conta{
     private Double taxaDeJuros;
     public ContaPoupanca(){
         super();
@@ -17,6 +17,10 @@ public class ContaPoupanca extends Conta{
     }
     public void atualizacaoSaldo(){
         saldo += saldo * taxaDeJuros ;
+    }
+    @Override
+    public final  void saque(double saque){
+        saldo -= saque;
     }
     
 }
