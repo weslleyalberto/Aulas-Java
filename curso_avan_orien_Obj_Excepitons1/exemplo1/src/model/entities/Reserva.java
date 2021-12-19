@@ -32,8 +32,8 @@ public class Reserva {
     }
     public long duracao(){
         long result = checkout.getTime() - checkin.getTime();
-        TimeUnit.DAYS.convert(result, TimeUnit.MICROSECONDS);
-        return result;
+        return TimeUnit.DAYS.convert(result, TimeUnit.MILLISECONDS);
+       
     }
     @Override
     public String toString(){
