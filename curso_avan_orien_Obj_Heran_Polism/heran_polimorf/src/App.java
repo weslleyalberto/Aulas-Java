@@ -55,10 +55,17 @@ public class App {
                 lista.add(new ContribuintePJ(nome,rendaAnual,funcionários));
             }
         }
-        for(Contribuinte p : lista){
-            System.out.println(p);
 
+
+        //Total Imposto Arrecadado
+        double soma = 0.0;
+        System.out.println("Total de gastos");
+        for(Contribuinte c : lista){
+            System.out.println(c);
+            soma += c.calculoImposto();
         }
+        System.out.println(soma);
+
        scanner.close();
     }
 }
