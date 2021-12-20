@@ -4,6 +4,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
+import model.exceptions.DomainException;
+
 public class Reserva {
     private Integer numeroQuarto;
     private Date checkin;
@@ -12,7 +14,10 @@ public class Reserva {
     public Reserva() {
         
     }
-    public Reserva(Integer numeroQuarto,Date checkin,Date checkout){
+    public Reserva(Integer numeroQuarto,Date checkin,Date checkout)throws DomainException{
+        if(!checkout.after(checkin)){
+            throw new DomainException("Erro de reserva: A data de checkout não pode ser anterior ao checkin");
+        }
         this.numeroQuarto = numeroQuarto;
         this.checkin = checkin;
         this.checkout = checkout;
@@ -26,17 +31,17 @@ public class Reserva {
     public Date getCheckout(){
         return checkout;
     }
-    public String atualizarDatas(Date checkin,Date checkout){
+    public void atualizarDatas(Date checkin,Date checkout) throws DomainException{
         Date now = new Date();
         if(checkin.before(now) || checkout.before(now)){
-            return "Erro: Para atualizar checkin ou checkout com data futuras";
+            throw new DomainException("Erro: Para atualizar checkin ou checkout com data futuras");
         }
-        if(!checkout.after(checkin)){
-           return "Erro de reserva: A data de checkout não pode ser anterior ao checkin";
-        }
+        /*if(!checkout.after(checkin)){
+            throw new DomainException("Erro de reserva: A data de checkout não pode ser anterior ao checkin");
+        }*/
         this.checkin = checkin;
         this.checkout = checkout;
-        return null;
+        
     }
     public long duracao(){
         long result = checkout.getTime() - checkin.getTime();
