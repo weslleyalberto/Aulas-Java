@@ -6,9 +6,9 @@ import model.entities.Fatura;
 public class ServicoRentavel {
     private Double precoPorDia;
     private Double precoPorHora;
-    private BrasilTaxaService taxaServiço;
+    private TaxService taxaServiço;
 
-    public ServicoRentavel(double precoPorDia,double precoPorHora,BrasilTaxaService taxaServico) {
+    public ServicoRentavel(double precoPorDia,double precoPorHora,TaxService taxaServico) {
        this.precoPorDia = precoPorDia;
        this.precoPorHora = precoPorHora;
        this.taxaServiço = taxaServico;
