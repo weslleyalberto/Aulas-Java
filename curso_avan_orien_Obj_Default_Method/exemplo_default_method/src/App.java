@@ -1,7 +1,7 @@
 import java.util.Locale;
 import java.util.Scanner;
-
-import entities.TaxaJurosBrasilService;
+import entities.TaxaJurosEUAService;
+import entities.TaxaJurosService;
 
 public class App {
     public static void main(String[] args)  {
@@ -12,7 +12,7 @@ public class App {
         double saldo = scanner.nextDouble();
         System.out.print("Mes/s:  ");
         int mes = scanner.nextInt();
-        TaxaJurosBrasilService brtx = new TaxaJurosBrasilService(2.0);
+        TaxaJurosService brtx = new TaxaJurosEUAService(1.0);
         double pagamento = brtx.pagamento(saldo, mes);
 
         System.out.println("Pagamento em " + mes + " mês: ");
