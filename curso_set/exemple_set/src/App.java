@@ -1,4 +1,5 @@
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -25,6 +26,20 @@ public class App {
         System.out.println(tree.contains("Marina"));
         for(String c : tree){
             System.out.println(c);
+        }
+
+        System.out.println("***********************************");
+        //Implementação do LinkedHashSet
+
+        Set<String> linkedHashSet = new LinkedHashSet<>();
+        linkedHashSet.add("Feijão");
+        linkedHashSet.add("Arroz");
+        linkedHashSet.add("Batata");
+        linkedHashSet.add("Tomate");
+
+        System.out.println(linkedHashSet.contains("Banana"));
+        for(String v: linkedHashSet){
+            System.out.println(v);
         }
     }
         
