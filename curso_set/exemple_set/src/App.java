@@ -37,7 +37,11 @@ public class App {
         linkedHashSet.add("Batata");
         linkedHashSet.add("Tomate");
 
+        linkedHashSet.remove("Tomate"); // Metodo para remover 
+        linkedHashSet.removeIf(c-> c.equals("Batata")); // remoção com predicado (função lambda)
+        linkedHashSet.removeIf(c-> c.length() == 5); // remoção com uso do  predicado
         System.out.println(linkedHashSet.contains("Banana"));
+
         for(String v: linkedHashSet){
             System.out.println(v);
         }
