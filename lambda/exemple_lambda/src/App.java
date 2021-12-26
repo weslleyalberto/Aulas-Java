@@ -14,6 +14,7 @@ public class App {
          
 
         list.sort((p1,p2) -> p1.getNome().toUpperCase().compareTo(p2.getNome().toUpperCase())); // reduzindo linhas de codigo (expressão lambda)
+        list.sort((p1,p2) -> p1.getPreco().compareTo(p2.getPreco()));
       list.sort(new Mycomparator());
 
        for(Produto p : list){
