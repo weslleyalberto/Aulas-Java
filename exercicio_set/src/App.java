@@ -24,6 +24,10 @@ public class App {
         Date momento = Date.from(Instant.parse(fields[1]));
         set.add(new LogEntrada(username, momento));
         linhas = bf.readLine();
+        for(LogEntrada e : set){
+            System.out.println(e.getUsername().hashCode());
+        }
+       // System.out.println(set.hashCode());
        }
        System.out.println("total usuarios: " + set.size());
 
@@ -31,7 +35,8 @@ public class App {
        catch(IOException e){
            System.out.println("Error: " + e.getMessage());
        }
-
+       
+       
        scanner.close();
 
     }
