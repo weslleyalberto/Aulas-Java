@@ -1,6 +1,6 @@
 package entities;
 
-public class Produto   {
+public class Produto {
     private String nome;
     private Double preco;
     public Produto(String nome, Double preco) {
@@ -16,14 +16,23 @@ public class Produto   {
     public Double getPreco() {
         return preco;
     }
-    public void setPreco(double preco) {
+    public void setPreco(Double preco) {
         this.preco = preco;
     }
-    @Override
-    public String toString(){
-        return "Nome: " + getNome() + "- " + "Preço: " + String.format("%.2f", getPreco());
+    public static boolean staticProdutoPredicate(Produto produto){
+        return produto.getPreco() > 3000.00;
     }
-   
+    public boolean noStaticProdutoPredicate(){
+        return preco > 3000.00;
+    }
+    @Override
+    public String toString() {
+       
+        return "Nome: " + getNome() + "- " + "Preço: " + String.format("%.2f", getPreco());
+        
+    }
     
+    
+
     
 }
