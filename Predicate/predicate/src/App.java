@@ -12,7 +12,7 @@ public class App {
         list.add(new Produto("Notebook",5999.90));
         list.add(new Produto("Smartphone", 6999.90));
 
-        list.removeIf(new ProdutoPredicate());
+        list.removeIf(Produto::staticProdutoPredicate);
 
         for(Produto p : list){
             System.out.println(p);
