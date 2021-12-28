@@ -20,7 +20,7 @@ public class App {
         list.removeIf(pred); //Reference Method
 
 
-        list.removeIf(c-> c.getPreco() > 2000.00);
+        list.removeIf(c-> c.getPreco() > 2000.00); // inline
         for(Produto p : list){
             System.out.println(p);
         }
