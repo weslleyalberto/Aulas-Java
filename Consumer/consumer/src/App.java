@@ -15,7 +15,7 @@ public class App {
         
 
        list.forEach(new PrecoUpdate());
-
+        list.forEach(Produto::staticUpdatePreco); // static method
       list.forEach(System.out::println);
 
     }

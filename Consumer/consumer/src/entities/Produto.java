@@ -25,6 +25,9 @@ public class Produto {
     public boolean noStaticProdutoPredicate(){
         return preco > 3000.00;
     }
+    public static void staticUpdatePreco(Produto produto){
+        produto.setPreco(produto.getPreco() * 1.1);
+    }
     @Override
     public String toString() {
        
