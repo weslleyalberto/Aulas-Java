@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import entities.Produto;
-import utils.UpdateNomeProduto;
+
 
 public class App {
     public static void main(String[] args)  {
@@ -16,6 +16,10 @@ public class App {
 
       // List<String> nomes  =list.stream().map(new UpdateNomeProduto()).collect(Collectors.toList());
       List<String> nomes  =list.stream().map(Produto::staticUpdateNome).collect(Collectors.toList()); // usando reference method
-       nomes.forEach(System.out::println);
+
+   
+
+      List<String> nomes1 = list.stream().map(c-> c.getNome().toUpperCase()).collect(Collectors.toList());    // Using express labda
+       nomes1.forEach(System.out::println);
     }
 }
