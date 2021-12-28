@@ -14,7 +14,8 @@ public class App {
        list.add(new Produto("Tablet", 1090.90));
 
 
-       List<String> nomes  =list.stream().map(new UpdateNomeProduto()).collect(Collectors.toList());
+      // List<String> nomes  =list.stream().map(new UpdateNomeProduto()).collect(Collectors.toList());
+      List<String> nomes  =list.stream().map(Produto::staticUpdateNome).collect(Collectors.toList()); // usando reference method
        nomes.forEach(System.out::println);
     }
 }

@@ -19,6 +19,9 @@ public class Produto {
     public void setPreco(Double preco) {
         this.preco = preco;
     }
+    public static String staticUpdateNome(Produto p){
+        return p.getNome().toUpperCase();
+    }
     @Override
     public String toString() {
         return "Produto [nome=" + nome + ", preco=" + preco + "]";
